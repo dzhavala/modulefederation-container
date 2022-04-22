@@ -19,14 +19,24 @@ h1 {
 
 .container > div {
   flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > div + div {
+  margin-left: 2rem;
+}
+
+.AppFrame {
   padding: 10px;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   background-color: #fff;
+  flex: 1 1 auto;
 }
 
-.container > div:before {
+.AppFrame:before {
   content: '';
   position: absolute;
   top: 0;
@@ -37,8 +47,4 @@ h1 {
   border: #fff solid 1px;
   border-radius: 10px;
   box-shadow: inset 0px 2px 3px 0px rgb(0 0 0 / 30%)
-}
-
-.container > div + div {
-  margin-left: 2rem;
 }
