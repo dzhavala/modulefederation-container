@@ -3,12 +3,15 @@
 .App {
   background-color:#8cc3f1;
   padding: 1rem;
+  border: #fff solid 1px;
   border-radius: 10px;
   box-shadow: 0 5px 7px 0px rgb(0 0 0 / 20%);
+  font-family: Trebuchet MS;
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin: 0 0 2rem;
+  text-align: center;
 }
 
 .container {

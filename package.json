@@ -17,7 +17,22 @@
 	},
 	"scripts": {
 		"start": "webpack serve",
-		"build": "webpack --mode production"
+		"build": "webpack --mode production",
+		"docker-dev-up": "docker compose -p mf-container-dev -f docker-compose.dev.yml up -d",
+		"docker-dev-build": "docker compose -p mf-container-dev -f docker-compose.dev.yml build",
+		"docker-dev-start": "npm run docker-dev-build && npm run docker-dev-up",
+		"docker-dev-container-stop": "docker stop mf-container-dev",
+		"docker-dev-container-remove": "docker rm mf-container-dev",
+		"docker-dev-image-remove": "docker image rm mf-container-dev",
+		"docker-dev-remove": "npm run docker-dev-container-stop && npm run docker-dev-container-remove && npm run docker-dev-image-remove",
+		"docker-dev-rebuild": "npm run docker-dev-remove && npm run docker-dev-start",
+		"docker-prod-build": "docker compose -p mf-container-prod build",
+		"docker-prod-up": "docker compose -p mf-container-prod up -d",
+		"docker-prod-start": "npm run docker-prod-build && npm run docker-prod-up",
+		"docker-prod-container-stop": "docker stop mf-container-prod",
+		"docker-prod-container-remove": "docker rm mf-container-prod",
+		"docker-prod-image-remove": "docker image rm mf-container-prod",
+		"docker-prod-remove": "npm run docker-prod-container-stop && npm run docker-prod-container-remove && npm run docker-prod-image-remove"
 	},
 	"dependencies": {
 		"dotenv": "^14.3.2",

@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  app:
+    container_name: mf-container-prod
+    image: mf-container-prod
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PROD_CONTAINER_PORT}:80

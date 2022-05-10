@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  container:
+    container_name: mf-container-dev
+    image: mf-container-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+    ports:
+      - ${DEV_CONTAINER_PORT}:${DEV_CONTAINER_PORT}
